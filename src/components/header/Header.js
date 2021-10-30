@@ -1,13 +1,11 @@
 import React from "react";
 import Button from "../ui/Button";
 
-const Header = () => {
+const Header = (props) => {
     return (
         <div>
             <span>Logo</span>
-            <form>
-                <Button type="submit" title="Logout" />
-            </form>
+            <Button type="submit" title="Logout" onClick={props.handleLogout} />
         </div>
     );
 };

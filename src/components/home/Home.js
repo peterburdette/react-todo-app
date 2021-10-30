@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import Header from "../header/Header";
 import AddNew from "../add/AddNew";
 import List from "../add/List";
-import classes from "./Home.module.css";
+// import classes from "./Home.module.css";
 
-const Home = () => {
+const Home = (props) => {
     const taskList = [];
     const [tasks, setTaskInList] = useState(taskList);
 
@@ -13,9 +13,10 @@ const Home = () => {
             return [...prevData, item];
         });
     };
+
     return (
         <div>
-            <Header />
+            <Header handleLogout={props.onLogout} />
             <AddNew setTaskInList={handleAddTask} />
             <List data={tasks} />
         </div>

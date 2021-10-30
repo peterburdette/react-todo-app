@@ -7,7 +7,6 @@ const Home = (props) => {
 
     const handleTaskUpdate = (event) => {
         setTask(event.target.value);
-        console.log(task);
     };
 
     const handleSubmit = (event) => {

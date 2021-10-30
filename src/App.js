@@ -14,15 +14,20 @@ function App() {
         }
     }, []);
 
-    const handleIsLoggedIn = (event) => {
+    const handleLogin = (event) => {
         localStorage.setItem("isLoggedIn", "1");
         setIsLoggedIn(event);
     };
 
+    const handleLogout = () => {
+        localStorage.removeItem("isLoggedIn");
+        setIsLoggedIn(false);
+    };
+
     return (
         <div>
-            {!isLoggedIn && <Login onLogin={handleIsLoggedIn} />}
-            {isLoggedIn && <Home />}
+            {!isLoggedIn && <Login onLogin={handleLogin} />}
+            {isLoggedIn && <Home onLogout={handleLogout} />}
         </div>
     );
 }
