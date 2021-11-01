@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Input from "../ui/Input";
-import Button from "../ui/Button";
+// import Button from "../ui/Button";
+import Button from "@mui/material/Button";
 
 const Home = (props) => {
     const [task, setTask] = useState("");
@@ -44,7 +45,9 @@ const Home = (props) => {
                 type="date"
                 onChange={handleDateUpdate}
             />
-            <Button type="submit" title="Submit" />
+            <Button variant="contained" type="submit">
+                Submit
+            </Button>
         </form>
     );
 };
