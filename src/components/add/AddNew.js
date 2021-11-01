@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import Input from "../ui/Input";
-import { TextField, Button } from "@mui/material";
+import {
+    Card,
+    CardContent,
+    CardActions,
+    TextField,
+    Button,
+} from "@mui/material";
+import styles from "./AddNew.module.css";
 
 const Home = (props) => {
     const [task, setTask] = useState("");
@@ -31,24 +38,30 @@ const Home = (props) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <TextField
-                required
-                id="outlined-basic"
-                label="Task Item"
-                variant="outlined"
-                onChange={handleTaskUpdate}
-            />
-            <Input
-                id="dueDate"
-                label="Due Date"
-                type="date"
-                onChange={handleDateUpdate}
-            />
-            <Button variant="contained" type="submit">
-                Submit
-            </Button>
-        </form>
+        <Card id={styles.formWrapper}>
+            <form onSubmit={handleSubmit}>
+                <CardContent>
+                    <TextField
+                        required
+                        id="outlined-basic"
+                        label="Task Item"
+                        variant="outlined"
+                        onChange={handleTaskUpdate}
+                    />
+                    <Input
+                        id="dueDate"
+                        label="Due Date"
+                        type="date"
+                        onChange={handleDateUpdate}
+                    />
+                </CardContent>
+                <CardActions>
+                    <Button variant="contained" type="submit">
+                        Submit
+                    </Button>
+                </CardActions>
+            </form>
+        </Card>
     );
 };
 

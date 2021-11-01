@@ -6,7 +6,7 @@ import {
     FormControlLabel,
     Checkbox,
 } from "@mui/material";
-import classes from "./TaskList.module.css";
+import styles from "./TaskList.module.css";
 
 const TaskList = (props) => {
     const handleComplete = (event, id) => {
@@ -16,7 +16,7 @@ const TaskList = (props) => {
     };
 
     return (
-        <div id={classes.listWrapper}>
+        <div id={styles.listWrapper}>
             <List
                 sx={{
                     bgcolor: "background.paper",

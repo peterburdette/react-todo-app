@@ -1,10 +1,10 @@
 import React, { Fragment } from "react";
-import classes from "./Input.module.css";
+import styles from "./Input.module.css";
 
 const Input = (props) => {
     return (
         <Fragment>
-            <label htmlFor={props.id} className={classes.label}>
+            <label htmlFor={props.id} className={styles.label}>
                 {props.label}
             </label>
             <input

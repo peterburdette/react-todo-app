@@ -1,12 +1,22 @@
 import React from "react";
-import Button from "../ui/Button";
+import { AppBar, Toolbar, IconButton, Typography, Button } from "@mui/material";
 
 const Header = (props) => {
     return (
-        <div>
-            <span>Logo</span>
-            <Button type="submit" title="Logout" onClick={props.handleLogout} />
-        </div>
+        <AppBar position="static">
+            <Toolbar>
+                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                    ToDo
+                </Typography>
+                <Button
+                    type="submit"
+                    color="inherit"
+                    onClick={props.handleLogout}
+                >
+                    Logout
+                </Button>
+            </Toolbar>
+        </AppBar>
     );
 };
 
