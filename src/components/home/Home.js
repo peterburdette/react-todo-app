@@ -14,11 +14,18 @@ const Home = (props) => {
         });
     };
 
+    const handleCompletedTask = (task) => {
+        const filteredTaskList = tasks.filter(
+            (element) => element.taskName !== task
+        );
+        setTaskInList(filteredTaskList);
+    };
+
     return (
         <div>
             <Header handleLogout={props.onLogout} />
             <AddNew setTaskInList={handleAddTask} />
-            <List data={tasks} />
+            <List data={tasks} handleCompletedTask={handleCompletedTask} />
         </div>
     );
 };
