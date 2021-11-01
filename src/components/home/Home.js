@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Header from "../header/Header";
 import AddNew from "../add/AddNew";
-import List from "../add/List";
+import TaskList from "../add/TaskList";
 // import classes from "./Home.module.css";
 
 const Home = (props) => {
@@ -26,7 +26,7 @@ const Home = (props) => {
         <div>
             <Header handleLogout={props.onLogout} />
             <AddNew setTaskInList={handleAddTask} />
-            <List data={tasks} handleCompletedTask={handleCompletedTask} />
+            <TaskList data={tasks} handleCompletedTask={handleCompletedTask} />
         </div>
     );
 };

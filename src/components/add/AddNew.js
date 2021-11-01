@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Input from "../ui/Input";
-// import Button from "../ui/Button";
-import Button from "@mui/material/Button";
+import { TextField, Button } from "@mui/material";
 
 const Home = (props) => {
     const [task, setTask] = useState("");
@@ -33,10 +32,11 @@ const Home = (props) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <Input
-                id="taskItem"
-                label="Task"
-                type="text"
+            <TextField
+                required
+                id="outlined-basic"
+                label="Task Item"
+                variant="outlined"
                 onChange={handleTaskUpdate}
             />
             <Input
