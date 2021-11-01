@@ -44,7 +44,7 @@ const Home = (props) => {
                 type="date"
                 onChange={handleDateUpdate}
             />
-            <Button type="submit" title="Submit" onClick={handleSubmit} />
+            <Button type="submit" title="Submit" />
         </form>
     );
 };
