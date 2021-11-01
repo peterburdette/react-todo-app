@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Input from "../ui/Input";
 import {
     Card,
     CardContent,
@@ -48,7 +47,7 @@ const Home = (props) => {
                         variant="outlined"
                         onChange={handleTaskUpdate}
                     />
-                    <Input
+                    <TextField
                         id="dueDate"
                         label="Due Date"
                         type="date"
