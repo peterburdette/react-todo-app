@@ -17,19 +17,25 @@ const TaskList = (props) => {
 
     return (
         <div id={classes.listWrapper}>
-            <List>
+            <List
+                sx={{
+                    bgcolor: "background.paper",
+                }}
+            >
                 {props.data.map((task) => (
                     <ListItem key={task.id}>
-                        <div>
-                            <FormControlLabel
-                                control={<Checkbox />}
-                                label={task.taskName}
-                                onChange={(event) =>
-                                    handleComplete(event, task.id)
-                                }
-                            />
-                        </div>
-                        <ListItemText secondary={task.dueDate} />
+                        <ListItemText
+                            primary={
+                                <FormControlLabel
+                                    control={<Checkbox />}
+                                    label={task.taskName}
+                                    onChange={(event) =>
+                                        handleComplete(event, task.id)
+                                    }
+                                />
+                            }
+                            secondary={task.dueDate}
+                        />
                     </ListItem>
                 ))}
             </List>
