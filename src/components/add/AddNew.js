@@ -4,9 +4,14 @@ import Button from "../ui/Button";
 
 const Home = (props) => {
     const [task, setTask] = useState("");
+    const [date, setDate] = useState("");
 
     const handleTaskUpdate = (event) => {
         setTask(event.target.value);
+    };
+
+    const handleDateUpdate = (event) => {
+        setDate(event.target.value);
     };
 
     const handleSubmit = (event) => {
@@ -17,7 +22,7 @@ const Home = (props) => {
         const taskData = {
             id: generatedId,
             taskName: task,
-            dueDate: "Nov 1",
+            dueDate: date,
         };
 
         if (taskData.taskName.length > 0) {
@@ -32,6 +37,12 @@ const Home = (props) => {
                 label="Task"
                 type="text"
                 onChange={handleTaskUpdate}
+            />
+            <Input
+                id="dueDate"
+                label="Due Date"
+                type="date"
+                onChange={handleDateUpdate}
             />
             <Button type="submit" title="Submit" onClick={handleSubmit} />
         </form>

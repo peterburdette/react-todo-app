@@ -13,6 +13,7 @@ const List = (props) => {
                 {props.data.map((task) => (
                     <li key={task.id}>
                         <div>{task.taskName}</div>
+                        <div>{task.dueDate}</div>
                         <div>
                             <Input
                                 type="checkbox"
