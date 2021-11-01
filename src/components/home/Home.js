@@ -14,10 +14,11 @@ const Home = (props) => {
         });
     };
 
-    const handleCompletedTask = (task) => {
-        const filteredTaskList = tasks.filter(
-            (element) => element.taskName !== task
-        );
+    const handleCompletedTask = (checkedValue, id) => {
+        console.log(checkedValue);
+
+        const filteredTaskList = tasks.filter((element) => element.id !== id);
+        console.log(filteredTaskList);
         setTaskInList(filteredTaskList);
     };
 

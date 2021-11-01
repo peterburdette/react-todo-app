@@ -3,8 +3,8 @@ import React from "react";
 import Input from "../ui/Input";
 
 const List = (props) => {
-    const handleComplete = (event) => {
-        props.handleCompletedTask(event.target.value);
+    const handleComplete = (event, id) => {
+        props.handleCompletedTask(event.target.checked, id);
     };
 
     return (
@@ -18,7 +18,9 @@ const List = (props) => {
                             <Input
                                 type="checkbox"
                                 value={task.taskName}
-                                onChange={handleComplete}
+                                onChange={(event) =>
+                                    handleComplete(event, task.id)
+                                }
                             />
                         </div>
                     </li>
