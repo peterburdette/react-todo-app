@@ -10,9 +10,7 @@ import styles from "./TaskList.module.css";
 
 const TaskList = (props) => {
     const handleComplete = (event, id) => {
-        setTimeout(() => {
-            props.handleCompletedTask(event.target.checked, id);
-        }, 2000);
+        props.handleCompletedTask(event.target.checked, id);
     };
 
     return (
