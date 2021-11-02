@@ -27,16 +27,10 @@ const Home = (props) => {
             <Header handleLogout={props.onLogout} />
             <AddNew setTaskInList={handleAddTask} />
             {tasks.length > 0 && (
-                <div>
-                    <p>
-                        There {tasks.length === 1 ? "is" : "are"} {tasks.length}{" "}
-                        {tasks.length === 1 ? "task" : "tasks"} to complete.
-                    </p>
-                    <TaskList
-                        data={tasks}
-                        handleCompletedTask={handleCompletedTask}
-                    />
-                </div>
+                <TaskList
+                    data={tasks}
+                    handleCompletedTask={handleCompletedTask}
+                />
             )}
         </div>
     );

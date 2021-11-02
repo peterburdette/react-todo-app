@@ -17,6 +17,11 @@ const TaskList = (props) => {
 
     return (
         <div id={styles.listWrapper}>
+            <p>
+                There {props.data.length === 1 ? "is" : "are"}{" "}
+                {props.data.length} {props.data.length === 1 ? "task" : "tasks"}{" "}
+                to complete.
+            </p>
             <List
                 sx={{
                     bgcolor: "background.paper",
