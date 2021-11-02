@@ -40,21 +40,25 @@ const Home = (props) => {
         <Card id={styles.formWrapper}>
             <form onSubmit={handleSubmit}>
                 <CardContent>
-                    <TextField
-                        required
-                        id="outlined-basic"
-                        label="Task Item"
-                        variant="outlined"
-                        onChange={handleTaskUpdate}
-                    />
-                    <TextField
-                        id="dueDate"
-                        label="Due Date"
-                        type="date"
-                        onChange={handleDateUpdate}
-                    />
+                    <div className={styles.formControlInput}>
+                        <TextField
+                            required
+                            id="taskItem"
+                            label="Task Item"
+                            variant="outlined"
+                            onChange={handleTaskUpdate}
+                        />
+                    </div>
+                    <div className={styles.formControlInput}>
+                        <TextField
+                            id="dueDate"
+                            type="date"
+                            variant="outlined"
+                            onChange={handleDateUpdate}
+                        />
+                    </div>
                 </CardContent>
-                <CardActions>
+                <CardActions id={styles.actions}>
                     <Button variant="contained" type="submit">
                         Submit
                     </Button>

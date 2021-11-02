@@ -4,3 +4,15 @@
     width: 100%;
     max-width: 500px;
 }
+
+.formControlInput {
+    display: inline-block;
+}
+
+.formControlInput:first-child {
+    margin: 0 2rem 0 0;
+}
+
+#actions {
+    padding: 0.5rem 1rem 1rem 1rem;
+}
