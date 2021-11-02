@@ -18,7 +18,7 @@ const Home = (props) => {
                 );
                 console.log(filteredTaskList);
                 setTaskInList(filteredTaskList);
-            }, 2000);
+            }, 1000);
         }
     }, [checkedValue, checkedValueId, tasks]);
 
