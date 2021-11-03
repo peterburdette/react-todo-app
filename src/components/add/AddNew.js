@@ -17,7 +17,31 @@ const Home = (props) => {
     };
 
     const handleDateUpdate = (event) => {
-        setDate(event.target.value);
+        const enteredDate = new Date(event.target.value + " 00:00");
+        const months = [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
+        ];
+        const monthIndex = enteredDate.getMonth();
+        const day = enteredDate.getDate();
+        const year = enteredDate.getFullYear();
+        const formattedDate = `${months[monthIndex]} ${day}, ${year}`;
+
+        if (event.target.value.length !== 0) {
+            setDate(formattedDate);
+        } else {
+            setDate("");
+        }
     };
 
     const handleSubmit = (event) => {
