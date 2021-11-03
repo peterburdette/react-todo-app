@@ -1,4 +1,4 @@
-#formWrapper {
+#addTaskFormWrapper {
     margin: 50px auto;
     padding: 10px;
     width: 100%;
@@ -13,6 +13,6 @@
     margin: 0 2rem 0 0;
 }
 
-#actions {
+#formActions {
     padding: 0.5rem 1rem 1rem 1rem;
 }

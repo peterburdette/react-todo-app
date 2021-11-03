@@ -37,7 +37,7 @@ const Home = (props) => {
     };
 
     return (
-        <Card id={styles.formWrapper}>
+        <Card id={styles.addTaskFormWrapper}>
             <form onSubmit={handleSubmit}>
                 <CardContent>
                     <div className={styles.formControlInput}>
@@ -58,7 +58,7 @@ const Home = (props) => {
                         />
                     </div>
                 </CardContent>
-                <CardActions id={styles.actions}>
+                <CardActions id={styles.formActions}>
                     <Button variant="contained" type="submit">
                         Submit
                     </Button>

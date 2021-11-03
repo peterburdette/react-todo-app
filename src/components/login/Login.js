@@ -1,6 +1,12 @@
 import React, { useState } from "react";
-import Input from "../ui/Input";
-import Button from "../ui/Button";
+import {
+    Card,
+    CardContent,
+    CardActions,
+    TextField,
+    Button,
+} from "@mui/material";
+import styles from "./Login.module.css";
 
 const Login = (props) => {
     const [username, setUsername] = useState("");
@@ -20,21 +26,33 @@ const Login = (props) => {
     };
 
     return (
-        <form onSubmit={submitHandler}>
-            <Input
-                label="Username"
-                id="username"
-                type="text"
-                onChange={handleUsername}
-            />
-            <Input
-                label="Password"
-                id="password"
-                type="password"
-                onChange={handlePassword}
-            />
-            <Button type="submit" title="Login" />
-        </form>
+        <Card id={styles.loginFormWrapper}>
+            <form onSubmit={submitHandler}>
+                <CardContent>
+                    <TextField
+                        id="username"
+                        className={styles.inputField}
+                        type="text"
+                        label="Username"
+                        variant="outlined"
+                        onChange={handleUsername}
+                    />
+                    <TextField
+                        id="password"
+                        className={styles.inputField}
+                        type="password"
+                        label="Password"
+                        variant="outlined"
+                        onChange={handlePassword}
+                    />
+                </CardContent>
+                <CardActions id={styles.formActions}>
+                    <Button type="submit" variant="contained">
+                        Login
+                    </Button>
+                </CardActions>
+            </form>
+        </Card>
     );
 };
 
