@@ -1,16 +1,11 @@
 import React from "react";
-import {
-    List,
-    ListItem,
-    ListItemText,
-    FormControlLabel,
-    Checkbox,
-} from "@mui/material";
+import TaskListItem from "./TaskListItem";
+import { List } from "@mui/material";
 import styles from "./TaskList.module.css";
 
 const TaskList = (props) => {
-    const handleComplete = (event, id) => {
-        props.handleCompletedTask(event.target.checked, id);
+    const handleCompleteTask = (list) => {
+        props.handleCompletedTask(list);
     };
 
     return (
@@ -26,20 +21,12 @@ const TaskList = (props) => {
                 }}
             >
                 {props.data.map((task) => (
-                    <ListItem key={task.id}>
-                        <ListItemText
-                            primary={
-                                <FormControlLabel
-                                    control={<Checkbox />}
-                                    label={task.taskName}
-                                    onChange={(event) =>
-                                        handleComplete(event, task.id)
-                                    }
-                                />
-                            }
-                            secondary={task.dueDate}
-                        />
-                    </ListItem>
+                    <TaskListItem
+                        list={props.data}
+                        key={task.id}
+                        taskItem={task}
+                        onComplete={handleCompleteTask}
+                    />
                 ))}
             </List>
         </div>
