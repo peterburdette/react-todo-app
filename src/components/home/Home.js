@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Header from "../header/Header";
 import AddNew from "../add/AddNew";
 import TaskList from "../list/TaskList";
@@ -7,20 +7,6 @@ import TaskList from "../list/TaskList";
 const Home = (props) => {
     const taskList = [];
     const [tasks, setTaskInList] = useState(taskList);
-    const [checkedValue, setCheckedValue] = useState();
-    const [checkedValueId, setCheckedValueId] = useState();
-
-    useEffect(() => {
-        if (checkedValue === true) {
-            setTimeout(() => {
-                const filteredTaskList = tasks.filter(
-                    (element) => element.id !== checkedValueId
-                );
-                console.log(filteredTaskList);
-                setTaskInList(filteredTaskList);
-            }, 1000);
-        }
-    }, [checkedValue, checkedValueId, tasks]);
 
     const handleAddTask = (item) => {
         setTaskInList((prevData) => {
@@ -29,8 +15,11 @@ const Home = (props) => {
     };
 
     const handleCompletedTask = (checkedValue, id) => {
-        setCheckedValue(checkedValue);
-        setCheckedValueId(id);
+        console.log(checkedValue);
+
+        const filteredTaskList = tasks.filter((element) => element.id !== id);
+        console.log(filteredTaskList);
+        setTaskInList(filteredTaskList);
     };
 
     return (
