@@ -47,7 +47,7 @@ const TaskListItem = (props) => {
             <ListItemText
                 primary={
                     <FormControlLabel
-                        className={checkedValue && styles.strikeThrough}
+                        className={checkedValue ? styles.strikeThrough : ""}
                         control={<Checkbox />}
                         label={props.taskItem.taskName}
                         onChange={(event) =>
