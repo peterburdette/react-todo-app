@@ -1,0 +1,7 @@
+.expired {
+    border-right: 8px solid rgb(207, 52, 52);
+}
+
+.strikeThrough {
+    text-decoration: line-through;
+}

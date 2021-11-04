@@ -5,6 +5,7 @@ import {
     FormControlLabel,
     Checkbox,
 } from "@mui/material";
+import styles from "./TaskListItem.module.css";
 
 const TaskListItem = (props) => {
     const [checkedValue, setCheckedValue] = useState();
@@ -13,9 +14,6 @@ const TaskListItem = (props) => {
     useEffect(() => {
         let timeout;
 
-        // console.log("checked: ", checkedValue);
-        // console.log("id: ", checkedValueId);
-
         if (checkedValue === true) {
             timeout = setTimeout(() => {
                 const filteredTaskList = props.list.filter(
@@ -23,7 +21,7 @@ const TaskListItem = (props) => {
                 );
                 console.log("task list item: ", filteredTaskList);
                 props.onComplete(filteredTaskList);
-            }, 1000);
+            }, 2000);
         } else {
             props.onComplete(props.list);
         }
@@ -31,7 +29,7 @@ const TaskListItem = (props) => {
         return () => {
             clearTimeout(timeout);
         };
-    }, [checkedValue]);
+    }, [checkedValue]); // eslint-disable-line react-hooks/exhaustive-deps
 
     const complete = (checked, id) => {
         setCheckedValue(checked);
@@ -39,10 +37,19 @@ const TaskListItem = (props) => {
     };
 
     return (
-        <ListItem>
+        <ListItem
+            className={
+                new Date(props.taskItem.dueDate) < new Date()
+                    ? styles.expired
+                    : ""
+            }
+        >
             <ListItemText
                 primary={
                     <FormControlLabel
+                        className={
+                            checkedValue === true && styles.strikeThrough
+                        }
                         control={<Checkbox />}
                         label={props.taskItem.taskName}
                         onChange={(event) =>
