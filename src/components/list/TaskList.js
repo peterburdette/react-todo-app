@@ -1,6 +1,6 @@
 import React from "react";
 import TaskListItem from "./TaskListItem";
-import { List } from "@mui/material";
+import { List, Card } from "@mui/material";
 import styles from "./TaskList.module.css";
 
 const TaskList = (props) => {
@@ -15,20 +15,18 @@ const TaskList = (props) => {
                 {props.data.length} {props.data.length === 1 ? "task" : "tasks"}{" "}
                 to complete.
             </p>
-            <List
-                sx={{
-                    bgcolor: "background.paper",
-                }}
-            >
-                {props.data.map((task) => (
-                    <TaskListItem
-                        list={props.data}
-                        key={task.id}
-                        taskItem={task}
-                        onComplete={handleCompleteTask}
-                    />
-                ))}
-            </List>
+            <Card>
+                <List>
+                    {props.data.map((task) => (
+                        <TaskListItem
+                            list={props.data}
+                            key={task.id}
+                            taskItem={task}
+                            onComplete={handleCompleteTask}
+                        />
+                    ))}
+                </List>
+            </Card>
         </div>
     );
 };
