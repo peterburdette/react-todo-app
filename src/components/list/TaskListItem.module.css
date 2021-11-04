@@ -1,3 +1,7 @@
+.warning {
+    border-right: 8px solid rgb(236, 134, 75);
+}
+
 .expired {
     border-right: 8px solid rgb(207, 52, 52);
 }

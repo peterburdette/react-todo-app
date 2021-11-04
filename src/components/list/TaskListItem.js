@@ -39,8 +39,12 @@ const TaskListItem = (props) => {
     return (
         <ListItem
             className={
-                new Date(props.taskItem.dueDate) < new Date()
+                new Date(props.taskItem.dueDate).toLocaleDateString() <
+                new Date().toLocaleDateString()
                     ? styles.expired
+                    : new Date(props.taskItem.dueDate).toLocaleDateString() ===
+                      new Date().toLocaleDateString()
+                    ? styles.warning
                     : ""
             }
         >
