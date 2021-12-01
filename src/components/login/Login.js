@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { authActions } from '../../store/auth';
+
 import {
     Card,
     CardContent,
@@ -9,20 +12,31 @@ import {
 import styles from "./Login.module.css";
 
 const Login = (props) => {
+    const dispatch = useDispatch();
+
+    // retrieves and stores credential values
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
+    // sets the username
     const handleUsername = (event) => {
         setUsername(event.target.value);
     };
 
+    // sets the password
     const handlePassword = (event) => {
         setPassword(event.target.value);
     };
 
+    // submits the login form and dispatches to 'store/index.js' => 'store/auth.js'
     const submitHandler = (event) => {
         event.preventDefault();
-        props.onLogin(username, password);
+
+        const userCreds = {
+            username: username,
+            password: password,
+        }
+        dispatch(authActions.login(userCreds));
     };
 
     return (
